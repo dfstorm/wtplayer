@@ -53,7 +53,7 @@ function wtplayer_prepare_body(&$a,&$b) {
    </div>
    <script>
     function wtplayerActivate_{$uId}() {
-        $('#wtplayer').html('<iframe src="/addon/wtplayer/player/?magnet={$encodedMagnetLink}" style="width: 100%;height: 400px; border:none;"></iframe>');
+        $('#wtplayer').html('<iframe src="/addon/wtplayer/wtplayer/?magnet={$encodedMagnetLink}" style="width: 100%;height: 400px; border:none;"></iframe>');
     }
    </script>
    
