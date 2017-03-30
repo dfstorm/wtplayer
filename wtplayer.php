@@ -24,7 +24,7 @@ function wtplayer_prepare_body(&$a,&$b) {
     /*
         Please note: this is not a finished work. It was a "speed coding"
         thing. I will make it more clean overtime. If you wish to help me,
-        just do a pull request at
+        just do a pull request at https://github.com/dfstorm/wtplayer-hubzilla
     
     */
     
