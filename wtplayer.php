@@ -1,6 +1,7 @@
 <?php
 /**
- * Name: wtplayer-hubzilla
+ *
+ * Name: Webtorrent player
  * Description: A Webtorrent player for hubzilla. Alpha. Unstable. For testing.
  * Version: 0.1
  * Depends: Core
@@ -12,12 +13,12 @@
 
 
 function wtplayer_load(){
-	register_hook('prepare_body', 'addon/wtplayer-hubzilla/wtplayer.php', 'wtplayer_prepare_body', 10);
+	register_hook('prepare_body', 'addon/wtplayer/wtplayer.php', 'wtplayer_prepare_body', 10);
 }
 
 
 function wtplayer_unload(){
-	unregister_hook('prepare_body', 'addon/wtplayer-hubzilla/wtplayer.php', 'wtplayer_prepare_body');
+	unregister_hook('prepare_body', 'addon/wtplayer/wtplayer.php', 'wtplayer_prepare_body');
 }
 
 function wtplayer_prepare_body(&$a,&$b) {
@@ -52,7 +53,7 @@ function wtplayer_prepare_body(&$a,&$b) {
    </div>
    <script>
     function wtplayerActivate_{$uId}() {
-        $('#wtplayer').html('<iframe src="/addon/wtplayer-hubzilla/player/?magnet={$encodedMagnetLink}" style="width: 100%;height: 400px; border:none;"></iframe>');
+        $('#wtplayer').html('<iframe src="/addon/wtplayer/player/?magnet={$encodedMagnetLink}" style="width: 100%;height: 400px; border:none;"></iframe>');
     }
    </script>
    
