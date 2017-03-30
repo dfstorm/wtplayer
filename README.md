@@ -1,5 +1,5 @@
 # wtplayer-hubzilla
-WebTorrent player  for Hubzilla. Simply add your magnet link between the ``[webtorent][/webtorent]`` tags.
+WebTorrent player  for Hubzilla. Simply add your magnet link between the ``[webtorrent][/webtorrent]`` tags.
 
 ## Example
 
