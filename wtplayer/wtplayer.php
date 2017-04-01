@@ -3,7 +3,7 @@
  *
  * Name: Webtorrent player
  * Description: A Webtorrent player for hubzilla. Alpha. Unstable. For testing.
- * Version: 0.1
+ * Version: 0.2
  * Depends: Core
  * Recommends: None
  * Category: Torrents
@@ -13,7 +13,7 @@
 
 
 function wtplayer_load(){
-	register_hook('prepare_body', 'addon/wtplayer/wtplayer.php', 'wtplayer_prepare_body', 10);
+	register_hook('prepare_body', 'addon/wtplayer/wtplayer.php', 'wtplayer_prepare_body');
 }
 
 
@@ -45,7 +45,7 @@ function wtplayer_prepare_body(&$a,&$b) {
     $encodedMagnetLink = base64_encode($magnetLink);
 
    $sPlayerblock = <<<HTMLRENDER
-   <div id="wtplayer" style="background:black; color:#fff; height: 300px; width: 100%; text-align:center;">
+   <div id="wtplayer_{$uId}" style="background:black; color:#fff; height: 300px; width: 100%; text-align:center;">
     <br /><br />Magnet link detected.
     <a onclick="wtplayerActivate_{$uId}();" class="">launch it</a>
     <br />Powerded by webtorrent.io<br /><br />
@@ -53,7 +53,7 @@ function wtplayer_prepare_body(&$a,&$b) {
    </div>
    <script>
     function wtplayerActivate_{$uId}() {
-        $('#wtplayer').html('<iframe src="/addon/wtplayer/wtplayer/?magnet={$encodedMagnetLink}" style="width: 100%;height: 400px; border:none;"></iframe>');
+        $('#wtplayer_{$uId}').html('<iframe src="/addon/wtplayer/view/tpl/index.php?magnet={$encodedMagnetLink}" style="width: 100%;height: 400px; border:none;"></iframe>');
     }
    </script>
    
